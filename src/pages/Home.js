@@ -8,15 +8,19 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      dispatch({
-        type: "setCurrLocation",
-        payload: {
-          lat: position.coords.latitude,
-          long: position.coords.longitude,
-        },
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        dispatch({
+          type: "setCurrLocation",
+          payload: {
+            lat: position.coords.latitude,
+            long: position.coords.longitude,
+          },
+        });
       });
-    });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
   }, [dispatch]);
 
   return (

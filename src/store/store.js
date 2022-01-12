@@ -38,10 +38,7 @@ const initialState = {
   loading: false,
   error: false,
   weatherData: null,
-  currLocation: {
-    lat: "",
-    long: "",
-  },
+  currLocation: null,
 };
 
 const store = createStore(weatherReducer);

@@ -1,26 +1,13 @@
 const api = {
   key: "2178d71f730cf2719f7f9527b7b22806",
-  base_url: "https://api.openweathermap.org/data/2.5/weather",
+  base_url: "https://api.openweathermap.org/data/2.5/onecall",
+  exclude: "minutely,hourly,alerts",
+  units: "metric",
 };
 
-const getWeatherByLocation = async (location) => {
+const getWeatherData = async (coordinates) => {
   const response = await fetch(
-    `${api.base_url}?lat=${location.lat}&lon=${location.long}&units=metric&appid=${api.key}`
-  );
-
-  if (!response.ok) {
-    throw new Error("Could not find the weather for specified place.");
-  }
-
-  const data = await response.json();
-  console.log("weather by location", data);
-
-  return data;
-};
-
-const getWeatherData = async (city) => {
-  const response = await fetch(
-    `${api.base_url}?q=${city}&units=metric&appid=${api.key}`
+    `${api.base_url}?lat=${coordinates.lat}&lon=${coordinates.long}exclude=${api.exclude}&units=${api.units}&appid=${api.key}`
   );
 
   if (!response.ok) {
