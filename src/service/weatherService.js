@@ -7,7 +7,7 @@ const api = {
 
 const getWeatherData = async (coordinates) => {
   const response = await fetch(
-    `${api.base_url}?lat=${coordinates.lat}&lon=${coordinates.long}exclude=${api.exclude}&units=${api.units}&appid=${api.key}`
+    `${api.base_url}?lat=${coordinates.lat}&lon=${coordinates.long}&exclude=${api.exclude}&units=${api.units}&appid=${api.key}`
   );
 
   if (!response.ok) {
@@ -19,4 +19,4 @@ const getWeatherData = async (coordinates) => {
   return data;
 };
 
-export { getWeatherData, getWeatherByLocation };
+export { getWeatherData };

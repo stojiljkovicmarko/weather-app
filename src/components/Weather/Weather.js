@@ -29,35 +29,37 @@ const month = months[date.getMonth()];
 
 const Weather = (props) => {
   const weatherData = useSelector((state) => state.weatherData);
+  const location = useSelector((state) => state.location);
   const error = useSelector((state) => state.error);
   const loading = useSelector((state) => state.loading);
 
   console.log("weatherData", weatherData);
+  console.log("location", location);
 
   return (
     <main className={classes.main}>
       {loading && <LoadSpinner />}
-      {error && <NotFound />}
-      {!error && !weatherData && <NotFound />}
-      {!error && weatherData && (
+      {!loading && error && <NotFound />}
+      {!loading && !error && !weatherData && (
+        <NotFound error={{ message: "Start searching..." }} />
+      )}
+      {!loading && !error && weatherData && (
         <section className={classes["current-day"]}>
           <div className={classes.location}>
             <p className={classes.city}>
-              {weatherData.city}, {weatherData.country}
+              {location.city}, {location.country}
             </p>
             <p className={classes.date}>{`${today}, ${month} ${day}`}</p>
           </div>
           <div className={classes.temperature}>
             <div className={classes["current-temperature"]}>
-              <p className={classes.currTemp}>{weatherData.temp}&#176;C</p>
+              <p className={classes.currTemp}>{weatherData.current.temp}&#176;C</p>
             </div>
             <div className={classes["more-data"]}>
-              <p>{weatherData.desc}</p>
-              <p>
-               {weatherData.min}&#176;/{weatherData.max}&#176;
-              </p>
+              <p>{weatherData.current.weather.description}</p>
+              <p>{weatherData.current.humidity}%</p>
               <p className={classes["feels-like"]}>
-                Feels like: {weatherData.feelsLike}&#176;C
+                Feels like: {weatherData.current.feels_like}&#176;C
               </p>
             </div>
           </div>

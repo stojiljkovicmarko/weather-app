@@ -1,14 +1,9 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-
-import { getWeatherData } from "../../service/weatherService";
+import { useState } from "react";
 
 import classes from "./SearchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const [query, setQuery] = useState("");
-  const [search, setSearch] = useState("");
-  const dispatch = useDispatch();
 
   const onInputChangeHandler = (event) => {
     setQuery(event.target.value);
@@ -16,35 +11,36 @@ const SearchBar = () => {
 
   const onInputHandler = (event) => {
     if (event.keyCode === 13) {
-      setSearch(query);
+      props.searchCity(query);
+      setQuery("");
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: "FETCH_INIT" });
-      try {
-        const data = await getWeatherData(search);
-        //console.log(data);
-        dispatch({ type: "FETCH_SUCCESS", payload: {
-          temp: Math.round(data.main.temp),
-          feelsLike: Math.round(data.main.feels_like),
-          min: Math.round(data.main.temp_min),
-          max: Math.round(data.main.temp_max),
-          humidity: data.main.humidity,
-          desc: data.weather[0].description,
-          city: data.name,
-          country: data.sys.country
-        } });
-      } catch (error) {
-        dispatch({ type: "FETCH_FAIL" });
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     dispatch({ type: "FETCH_INIT" });
+  //     try {
+  //       const data = await getWeatherData(search);
+  //       //console.log(data);
+  //       dispatch({ type: "FETCH_SUCCESS", payload: {
+  //         temp: Math.round(data.main.temp),
+  //         feelsLike: Math.round(data.main.feels_like),
+  //         min: Math.round(data.main.temp_min),
+  //         max: Math.round(data.main.temp_max),
+  //         humidity: data.main.humidity,
+  //         desc: data.weather[0].description,
+  //         city: data.name,
+  //         country: data.sys.country
+  //       } });
+  //     } catch (error) {
+  //       dispatch({ type: "FETCH_FAIL" });
+  //     }
+  //   };
 
-    if (search.trim() !== "") {
-      fetchData();
-    }
-  }, [search, dispatch]);
+  //   if (search.trim() !== "") {
+  //     fetchData();
+  //   }
+  // }, [search, dispatch]);
 
   return (
     <div className={classes["search-bar"]}>

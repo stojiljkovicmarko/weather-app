@@ -13,7 +13,6 @@ const weatherReducer = (state, action) => {
         ...state,
         error: false,
         loading: false,
-        weatherData: action.payload,
       };
     case "FETCH_FAIL":
       return {
@@ -21,12 +20,25 @@ const weatherReducer = (state, action) => {
         loading: false,
         error: true,
       };
+    case "SET_WEATHER":
+      return {
+        ...state,
+        weatherData: action.payload,
+      };
+    case "SET_COORDINATES":
+      return {
+        ...state,
+        coordinates: {
+          lat: action.payload.lat,
+          long: action.payload.long,
+        },
+      };
     case "SET_LOCATION":
       return {
         ...state,
-        currLocation: {
-          lat: action.payload.lat,
-          long: action.payload.long,
+        location: {
+          city: action.payload.city,
+          country: action.payload.country,
         },
       };
     default:
@@ -38,7 +50,8 @@ const initialState = {
   loading: false,
   error: false,
   weatherData: null,
-  currLocation: null,
+  coordinates: null,
+  location: null,
 };
 
 const store = createStore(weatherReducer);
