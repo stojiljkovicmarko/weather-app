@@ -58,6 +58,24 @@
   text-align: right;
 }
 
+.forecast-section {
+    margin: 20px 0;
+}
+
+.forecast {
+    display: inline-block;
+    margin: 0.8rem 0.8rem;
+}
+
+.forecast .day {
+    text-align: center;
+    font-weight: bold;
+}
+
+.temp-min {
+    color: #945d60;
+}
+
 @media only screen and (min-width: 481px) {
     .temperature {
         flex-direction: column;
