@@ -2,5 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-image: url(./assets/mountains.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  --rusty-red: #984B43;
+  --rusty-red-shadow: rgba(116, 59, 53, 0.5);
 }

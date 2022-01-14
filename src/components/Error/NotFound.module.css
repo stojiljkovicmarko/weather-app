@@ -1,9 +1,10 @@
 .error {
+  max-width: 500px;
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
   border-radius: 25px;
-  background-color: #AF473C;
-  color: white;
+  background-color: var(--rusty-red);
+  color: whitesmoke;
   text-align: center;
 }

@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
 
+import CurrentWeather from "./CurrentWeather";
+import Forecast from "./Forecast";
 import LoadSpinner from "../Loader/LoadSpinner";
 import NotFound from "../Error/NotFound";
 
 import classes from "./Weather.module.css";
+import Hourly from "./Hourly";
 
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.substring(1);
@@ -47,13 +50,10 @@ const getForecastDays = () => {
 
 const Weather = (props) => {
   const weatherData = useSelector((state) => state.weatherData);
-  const location = useSelector((state) => state.location);
   const error = useSelector((state) => state.error);
   const loading = useSelector((state) => state.loading);
-  const forecastDays = getForecastDays();
 
-  console.log("weatherData", weatherData);
-  console.log("location", location);
+  console.log(weatherData);
 
   return (
     <main className={classes.main}>
@@ -64,57 +64,12 @@ const Weather = (props) => {
       )}
       {!loading && !error && weatherData && (
         <>
-          <section className={classes["current-day"]}>
-            <div className={classes.location}>
-              <p className={classes.city}>
-                {location.city}, {location.country}
-              </p>
-              <p className={classes.date}>{`${today}, ${month} ${day}`}</p>
-            </div>
-            <div className={classes.temperature}>
-              <div className={classes["current-temperature"]}>
-                <img
-                  src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}.png`}
-                  alt={weatherData.current.weather[0].main}
-                />
-                <p className={classes.currTemp}>
-                  {Math.round(weatherData.current.temp)}&#176;C
-                </p>
-                <p className={classes["feels-like"]}>
-                  Feels like: {Math.round(weatherData.current.feels_like)}
-                  &#176;C
-                </p>
-              </div>
-              <div className={classes["more-data"]}>
-                <p>
-                  {capitalizeFirstLetter(
-                    weatherData.current.weather[0].description
-                  )}
-                </p>
-                <p>Humidity: {weatherData.current.humidity}%</p>
-                <p>Wind: {Math.round(weatherData.current.wind_speed)}km/h</p>
-              </div>
-            </div>
-          </section>
-          <section className={classes["forecast-section"]}>
-            {forecastDays.map((day, index) => {
-              return (
-                <div key={index} className={classes.forecast}>
-                  <p className={classes.day}>{day}</p>
-                  <img
-                    src={`https://openweathermap.org/img/wn/${weatherData.daily[index].weather[0].icon}.png`}
-                    alt={weatherData.daily[index].weather[0].main}
-                  />
-                  <p>
-                    <span className={classes["temp-min"]}>
-                      {Math.round(weatherData.daily[index].temp.min)}&#176;
-                    </span>{" "}
-                    / {Math.round(weatherData.daily[index].temp.max)}&#176;
-                  </p>
-                </div>
-              );
-            })}
-          </section>
+          <CurrentWeather
+            date={{ today, day, month }}
+            capitalizeFirstLetter={capitalizeFirstLetter}
+          />
+          <Forecast forecastDays={getForecastDays} />
+          <Hourly />
         </>
       )}
     </main>

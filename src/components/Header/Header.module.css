@@ -1,12 +1,7 @@
-.header-container {
-  width: 100%;
-  background-color: #3c3c3c;
-}
-
 .header {
-  width: 80%;
-  margin: 0 auto;
-  padding: 2rem 0;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,35 +10,47 @@
 }
 
 .header h1 {
-  width: 80%;
   font-size: 3.3rem;
-  margin: 0.8rem auto;
+  color: var(--rusty-red);
+  text-shadow: 2px 2px rgba(116, 59, 53, 0.5);
 }
 
 .nav ul {
+  max-width: 500px;
+  width: 80%;
+  margin: 0 auto;
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0;
-  align-items: center;
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav ul li {
-  width: 3rem;
-  border: 1px solid #af473c;
-  background-color: #af473c;
-  padding: 1rem 1.4rem;
   width: 100%;
-  margin: 0.5rem 1rem;
-  border-radius: 15px;
+  padding: 0.7rem;
+  margin: 0.5rem auto;
+
+  background-color: var(--rusty-red);
   font-weight: bold;
-  box-shadow: 2px 2px rgba(0, 0, 0, 1);
+
+  border: 1px solid var(--rusty-red);
+  border-radius: 15px;
+  box-shadow: 2px 2px var(--rusty-red-shadow);
 }
 
 .nav ul li:hover {
-  background-color: #81362e;
+  border-color: transparent;
+  background-color: #703832;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+
+a.active li {
+  border-color: transparent;
+  background-color: #703832;
   cursor: pointer;
   box-shadow: none;
 }
@@ -53,15 +60,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    text-align: start;
   }
 
   .nav ul {
+    display: flex;
     flex-direction: row;
     justify-content: right;
-    width: 300px;
+    align-items: center;
   }
+
   .nav ul li {
-    width: 80px;
+    margin: 0 0.5rem;
+    width: 120px;
   }
 }

@@ -1,7 +1,7 @@
 const api = {
   key: "2178d71f730cf2719f7f9527b7b22806",
   base_url: "https://api.openweathermap.org/data/2.5/onecall",
-  exclude: "minutely,hourly,alerts",
+  exclude: "minutely,alerts",
   units: "metric",
 };
 
