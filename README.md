@@ -3,7 +3,7 @@
 
 **Simple weather application!**
 
-- React.js
+- **_React.js_**
 - Redux
 - React routing
 - 2 APIs: Weather API and Geolocation API
