@@ -10,8 +10,11 @@
 - CSS3 for styling
 - Responsive design
 
-If you give permission for location, the landing page will show the weather at your location.
+Given location permission, the landing page will show the weather at your location.
 Otherwise you can search for a city of your choice.
 
-Landing page will show: current weather, forecast for 5 days and weather for the next 24h.
+Landing page will show: 
+- Current weather (temp, humidity, wind, weather description);
+- Dailty forecast - for the next 5 days; 
+- Hourly forecast - for the next 24h.
 
