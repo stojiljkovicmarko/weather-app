@@ -12,8 +12,6 @@ const getCoordinatesFromLocation = async (city) => {
 
   const data = await response.json();
 
-  console.log("data from get coordinates:", data);
-
   return data;
 };
 

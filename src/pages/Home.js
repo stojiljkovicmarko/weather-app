@@ -12,9 +12,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
   const coordinates = useSelector((state) => state.coordinates);
+  const location = useSelector((state) => state.location);
 
   const searchCity = (city) => {
-    console.log(city);
     setSearchTerm(city);
   };
 
@@ -29,7 +29,6 @@ const Home = () => {
       try {
         dispatch({ type: "FETCH_INIT" });
         const data = await getLocationOfCoordinates(coordinates);
-
         dispatch({
           type: "SET_LOCATION",
           payload: {
@@ -42,11 +41,6 @@ const Home = () => {
         dispatch({ type: "FETCH_FAIL" });
       }
     };
-
-    //f-ja koja poziva reverseGeolocation noiv API opencagedata
-    //za koordinate koje dole dobijemo
-    //ako postoji geolocation kao prvu funkicju prosledimo taj poziv
-    //onda popunimo podatke o mestu i postavimo koordinate
 
     const catchGeoLocationError = () => {
       alert("User denied geolocation.");
@@ -61,11 +55,6 @@ const Home = () => {
       alert("Geolocation is not supported by this browser.");
     }
   }, [dispatch]);
-
-  //drugi useeffect je za mesto, tj. adresu kod nas location
-  //proverimo da li ima ako nema onda return, ako ima znaci da je obavljen search ili je data lokacija
-  //onda cemo ovde obaviti forward geolocation, tj na osnovu search-a dobijemo koordinate koje promenimo
-  //onda se opali treci efekat da na osnovu koordinata fetchuje podatke
 
   useEffect(() => {
     if (searchTerm === "") {
@@ -93,7 +82,6 @@ const Home = () => {
             country: data.results[0].components.country,
           },
         });
-        console.log("uspesne koordinate i lokacija");
         dispatch({ type: "FETCH_SUCCESS" });
       } catch (error) {
         dispatch({ type: "FETCH_FAIL" });
@@ -103,22 +91,15 @@ const Home = () => {
     getLocation();
   }, [searchTerm, dispatch]);
 
-  //trec useeffect ce gledati ako if (Object.keys(coordinates).length === 0) return;
-  //ako nema koordinata, ako ima onda neka napravi fetch podatak sa tim koordinatama
-  //to ce biti oneCall poziv sa openweatherapi
-  //kao dependency stavimo coordinate jer ce se onda i ovo izvrsiti ako imamo gore koordinate od navigatora
-
   useEffect(() => {
-    if (!coordinates) {
+    if (!coordinates || !location) {
       return;
     }
 
     const getWeatherAndForecast = async () => {
       try {
         dispatch({ type: "FETCH_INIT" });
-
         const data = await getWeatherData(coordinates);
-
         dispatch({ type: "SET_WEATHER", payload: data });
         dispatch({type: "FETCH_SUCCESS"});
       } catch (error) {
@@ -127,7 +108,7 @@ const Home = () => {
     };
 
     getWeatherAndForecast();
-  }, [coordinates, dispatch]);
+  }, [coordinates, location, dispatch]);
 
   return (
     <>

@@ -20,10 +20,13 @@ const weatherReducer = (state, action) => {
         loading: false,
         error: true,
       };
-    case "SET_WEATHER":
+    case "SET_LOCATION":
       return {
         ...state,
-        weatherData: action.payload,
+        location: {
+          city: action.payload.city,
+          country: action.payload.country,
+        },
       };
     case "SET_COORDINATES":
       return {
@@ -33,13 +36,10 @@ const weatherReducer = (state, action) => {
           long: action.payload.long,
         },
       };
-    case "SET_LOCATION":
+    case "SET_WEATHER":
       return {
         ...state,
-        location: {
-          city: action.payload.city,
-          country: action.payload.country,
-        },
+        weatherData: action.payload,
       };
     default:
       return initialState;

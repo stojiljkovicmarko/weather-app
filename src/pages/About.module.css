@@ -21,5 +21,10 @@
 }
 
 .about a {
+    text-decoration: none;
     color: #233237;
+}
+
+.about a:hover {
+    color: #286172;
 }
