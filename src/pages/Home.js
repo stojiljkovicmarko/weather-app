@@ -14,6 +14,7 @@ const Home = () => {
   const coordinates = useSelector((state) => state.coordinates);
 
   const searchCity = (city) => {
+    console.log(city);
     setSearchTerm(city);
   };
 
@@ -92,6 +93,7 @@ const Home = () => {
             country: data.results[0].components.country,
           },
         });
+        console.log("uspesne koordinate i lokacija");
         dispatch({ type: "FETCH_SUCCESS" });
       } catch (error) {
         dispatch({ type: "FETCH_FAIL" });
@@ -118,6 +120,7 @@ const Home = () => {
         const data = await getWeatherData(coordinates);
 
         dispatch({ type: "SET_WEATHER", payload: data });
+        dispatch({type: "FETCH_SUCCESS"});
       } catch (error) {
         dispatch({ type: "FETCH_FAIL" });
       }

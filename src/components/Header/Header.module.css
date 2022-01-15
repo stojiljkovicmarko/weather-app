@@ -22,17 +22,16 @@
   margin: 0 auto;
   list-style: none;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
   text-decoration: none;
-}
-
-.nav ul li {
-  width: 100%;
+  display: block;
   padding: 0.7rem;
-  margin: 0.5rem auto;
-
   background-color: var(--rusty-red);
   font-weight: bold;
 
@@ -41,17 +40,22 @@ a {
   box-shadow: 2px 2px var(--rusty-red-shadow);
 }
 
-.nav ul li:hover {
+.nav ul li {
+  width: 100%;
+  margin: 0.5rem auto;
+}
+
+.nav ul a:hover {
   border-color: transparent;
   background-color: #703832;
   cursor: pointer;
   box-shadow: none;
 }
 
-
-a.active li {
+a.active {
   border-color: transparent;
   background-color: #703832;
+  border-radius: 15px;
   cursor: pointer;
   box-shadow: none;
 }
