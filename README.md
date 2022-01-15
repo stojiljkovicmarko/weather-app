@@ -1,9 +1,9 @@
 **[View deployment](https://weather-app-marko.netlify.app/)**
 
 
-**Simple weather application!**
+# Simple weather application!
 
-- **_React.js_**
+- React.js
 - Redux
 - React routing
 - 2 APIs: Weather API and Geolocation API
