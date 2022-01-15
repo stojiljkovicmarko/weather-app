@@ -1,9 +1,14 @@
-**Simple weather application!**
 **[View deployment](https://weather-app-marko.netlify.app/)**
 
-React.js, Redux and React routing
-2 APIs: Weather API and Geolocation API
-Responsive design
+
+**Simple weather application!**
+
+- React.js
+- Redux
+- React routing
+- 2 APIs: Weather API and Geolocation API
+- CSS3 for styling
+- Responsive design
 
 If you give permission for location, the landing page will show the weather at your location.
 Otherwise you can search for a city of your choice.
