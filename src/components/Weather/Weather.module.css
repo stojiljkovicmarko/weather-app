@@ -8,15 +8,6 @@ section {
   max-width: 500px;
 }
 
-.cb2 {
-  color: black;
-  background: linear-gradient(
-    to right bottom,
-    rgba(225, 225, 225, 0.5),
-    rgba(225, 225, 225, 0.3)
-  );
-}
-
 .card-number {
   color: rgba(225, 225, 225, 0.08);
   font-size: 8rem;

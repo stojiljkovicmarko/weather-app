@@ -94,8 +94,6 @@ const Home = () => {
         });
         dispatch({ type: "FETCH_SUCCESS" });
       } catch (error) {
-        console.log(error);
-        console.log(error.message);
         dispatch({ type: "FETCH_FAIL" });
       }
     };
