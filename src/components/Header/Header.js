@@ -10,7 +10,6 @@ const Header = (props) => {
         <ul>
           <li>
             <NavLink
-              onClick={console.log("about")}
               to="/home"
               className={(navData) =>
                 navData.isActive ? `${classes.active}` : ""
@@ -21,7 +20,6 @@ const Header = (props) => {
           </li>
           <li>
             <NavLink
-              onClick={console.log("about")}
               to="/about"
               className={(navData) =>
                 navData.isActive ? `${classes.active}` : ""

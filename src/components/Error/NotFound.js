@@ -8,7 +8,7 @@ const NotFound = (props) => {
   if (message) {
     errorToDisplay = <p>{message}</p>;
   } else {
-    errorToDisplay = <p>No information available!</p>;
+    errorToDisplay = <p>Something went wrong! Please try again.</p>;
   }
 
   return <div className={classes.error}>{errorToDisplay}</div>;

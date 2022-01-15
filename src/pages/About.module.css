@@ -6,6 +6,7 @@
   border-radius: 25px;
   background-color: var(--rusty-red);
   color: whitesmoke;
+  text-align: justify;
 }
 
 .title {

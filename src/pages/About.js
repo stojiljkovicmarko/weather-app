@@ -15,7 +15,11 @@ const About = (props) => {
           OpenCage Geocoding API
         </a>{" "}
       </p>
-      <p>We implemented Redux for state management, even though it's fairly straight forward. Also, there is simple routing. Gotta, practise it somewhere. :)</p>
+      <p>
+        We implemented Redux for state management, even though it's fairly
+        straight-forward. Also, there is a simple routing. Gotta, practise it
+        somewhere. :)
+      </p>
     </div>
   );
 };

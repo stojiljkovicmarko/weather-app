@@ -7,7 +7,7 @@ const getCoordinatesFromLocation = async (city) => {
   const response = await fetch(`${api.base_url}?q=${city}&key=${api.key}`);
 
   if (!response.ok) {
-    throw new Error("Could not find info for that city!");
+    throw new Error("Could not find information for the city!");
   }
 
   const data = await response.json();

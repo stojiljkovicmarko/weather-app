@@ -48,19 +48,37 @@ const getForecastDays = () => {
   return forecastDays;
 };
 
+const getNextHours = () => {
+  let currentHour = date.getHours();
+  const hoursArray = [];
+  for(let i = 0; i < 25; i++) {
+    
+    if(currentHour < 24) {
+      currentHour++;
+      if(currentHour < 10) {
+        hoursArray.push("0" + currentHour);
+      } else {
+        hoursArray.push("" + currentHour);
+      }
+    } else {
+      currentHour = 0;
+      hoursArray.push("0" + currentHour);
+    }
+  }
+  return hoursArray;
+};
+
 const Weather = (props) => {
   const weatherData = useSelector((state) => state.weatherData);
   const error = useSelector((state) => state.error);
   const loading = useSelector((state) => state.loading);
-
-  console.log(weatherData);
 
   return (
     <main className={classes.main}>
       {loading && <LoadSpinner />}
       {!loading && error && <NotFound />}
       {!loading && !error && !weatherData && (
-        <NotFound error={{ message: "Start searching..." }} />
+        <NotFound error={{ message: "Start by typing a city..." }} />
       )}
       {!loading && !error && weatherData && (
         <>
@@ -69,7 +87,7 @@ const Weather = (props) => {
             capitalizeFirstLetter={capitalizeFirstLetter}
           />
           <Forecast forecastDays={getForecastDays} />
-          <Hourly />
+          <Hourly getNextHours={getNextHours} />
         </>
       )}
     </main>

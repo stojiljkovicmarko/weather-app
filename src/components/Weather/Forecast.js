@@ -8,7 +8,7 @@ const Forecast = (props) => {
 
   return (
     <section>
-      <div className={classes["forecast-card"]}>
+      <div className={`${classes["forecast-card"]} ${classes.cb1}`}>
         {forecastDays.map((day, index) => {
           return (
             <div key={index} className={classes.forecast}>

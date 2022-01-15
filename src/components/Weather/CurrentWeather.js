@@ -9,8 +9,8 @@ const CurrentWeather = (props) => {
   const { today, month, day } = props.date;
 
   return (
-    <section className={classes.cb1}>
-      <div className={classes["current-day"]}>
+    <section>
+      <div className={`${classes["current-day"]} ${classes.cb2}` }>
         <div className={classes.location}>
           <p className={classes.city}>
             {location.city}, {location.country}

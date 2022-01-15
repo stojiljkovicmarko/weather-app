@@ -11,7 +11,7 @@ const getLocationOfCoordinates = async (coordinates) => {
   );
 
   if (!response.ok) {
-    throw new Error("Could not find info!");
+    throw new Error("Could not find information for the city!");
   }
 
   const data = await response.json();
