@@ -41,6 +41,11 @@ const weatherReducer = (state, action) => {
         ...state,
         weatherData: action.payload,
       };
+    case "SET_AIR_POLLUTION":
+      return {
+        ...state,
+        airPollutionData: action.payload,
+      };
     default:
       return initialState;
   }
@@ -52,6 +57,7 @@ const initialState = {
   weatherData: null,
   coordinates: null,
   location: null,
+  airPollutionData: null,
 };
 
 const store = createStore(weatherReducer);

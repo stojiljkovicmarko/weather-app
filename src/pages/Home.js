@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { getCoordinatesFromLocation } from "../service/forwardGeolocation";
 import { getLocationOfCoordinates } from "../service/reverseGeolocation";
 import { getWeatherData } from "../service/weatherService";
+import { getAQI } from "../service/airQualityIndex";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -99,9 +100,15 @@ const Home = () => {
     const getWeatherAndForecast = async () => {
       try {
         dispatch({ type: "FETCH_INIT" });
-        const data = await getWeatherData(coordinates);
-        dispatch({ type: "SET_WEATHER", payload: data });
-        dispatch({type: "FETCH_SUCCESS"});
+        //we can put getting weather and air pollution here
+        const weatherData = getWeatherData(coordinates);
+        const airPollutionData = getAQI(coordinates);
+
+        const data = await Promise.all([weatherData, airPollutionData]);
+
+        dispatch({ type: "SET_WEATHER", payload: data[0] });
+        dispatch({ type: "SET_AIR_POLLUTION", payload: data[1] });
+        dispatch({ type: "FETCH_SUCCESS" });
       } catch (error) {
         dispatch({ type: "FETCH_FAIL" });
       }
