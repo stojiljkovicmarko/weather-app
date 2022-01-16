@@ -4,16 +4,7 @@
 }
 
 section {
-  margin: 0 auto 2rem;
+  margin: 0 auto 0.5rem;
   max-width: 500px;
 }
 
-.card-number {
-  color: rgba(225, 225, 225, 0.08);
-  font-size: 8rem;
-  font-weight: bold;
-  z-index: -1;
-  position: absolute;
-  top: -1rem;
-  right: 2.5rem;
-}

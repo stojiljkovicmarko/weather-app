@@ -1,7 +1,7 @@
 .hourly-card {
   width: 100%;
   max-width: 500px;
-  padding: 1.2rem 1.6rem;
+  padding: 0.6rem 0.6rem;
 
   border: 1px solid transparent;
   border-radius: 1rem;
@@ -34,15 +34,16 @@
 .hourly {
   display: inline-block;
   text-align: center;
-  margin: 0.8rem 0.8rem;
+  margin: 0.2rem 0.6rem;
 }
 
 .hour {
+  font-size: 0.9rem;
   color: gray;
 }
 
 .temp-hour {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .temp-pop {
@@ -57,4 +58,16 @@
 .temp-pop img {
   height: 10px;
   margin-right: 3%;
+}
+
+@media only screen and (min-width: 450px) {
+  
+  .hour {
+    font-size: 1.1rem;
+  }
+
+  .temp-hour {
+    font-size: 1.2rem;
+  }
+
 }

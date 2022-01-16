@@ -85,9 +85,10 @@ const Weather = (props) => {
           <CurrentWeather
             date={{ today, day, month }}
             capitalizeFirstLetter={capitalizeFirstLetter}
+            getNextHours={getNextHours}
           />
-          <Forecast forecastDays={getForecastDays} />
           <Hourly getNextHours={getNextHours} />
+          <Forecast forecastDays={getForecastDays} />
         </>
       )}
     </main>

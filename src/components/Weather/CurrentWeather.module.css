@@ -1,10 +1,11 @@
 .current-day {
   width: 100%;
   max-width: 500px;
-  padding: 1.2rem 1.6rem;
+  padding: 1rem 1.1rem;
 
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   border: 1px solid transparent;
   border-radius: 1rem;
@@ -33,12 +34,12 @@
 
 .city {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1%;
 }
 
 .date {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: gray;
   font-style: italic;
 }
@@ -62,11 +63,12 @@
 
 .currTemp {
   display: inline-block;
-  font-size: 2.2rem;
-  padding: 0.5rem 0.5rem 0.2rem;
+  font-size: 2rem;
+  padding: 0.2rem 0.5rem;
 }
 
-.current-temperature > p {
+.feels-like {
+  font-size: 1rem;
   font-style: italic;
 }
 
@@ -79,7 +81,7 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 350px) {
   .temperature {
     flex-direction: column;
     justify-content: center;
@@ -92,5 +94,27 @@
 
   .more-data {
     align-items: center;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .city {
+    font-size: 1.4rem;
+  }
+
+  .date {
+    font-size: 1.1rem;
+  }
+
+  .currTemp {
+    font-size: 2.3rem;
+  }
+
+  .feels-like span {
+    font-size: 1.1rem;
+  }
+
+  .more-data {
+    font-size: 1.2rem;
   }
 }

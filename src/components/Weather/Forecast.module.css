@@ -1,7 +1,7 @@
 .forecast-card {
   width: 100%;
   max-width: 500px;
-  padding: 1.2rem 1.6rem;
+  padding: 1rem 0.8rem;
 
   border: 1px solid transparent;
   border-radius: 1rem;
@@ -31,13 +31,20 @@
 }
 
 .forecast {
-  display: inline-block;
-  margin: 0.8rem 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.4rem 0.2rem;
 }
 
 .day {
   text-align: center;
   font-weight: bold;
+}
+
+span {
+  font-size: 0.9rem;
 }
 
 .temp-min {
@@ -46,4 +53,16 @@
 
 .temp-max {
   color: #eac67a;
+}
+
+@media only screen and (min-width: 450px) {
+  
+  .forecast {
+    margin: 0.8rem 0.6rem;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+
 }
