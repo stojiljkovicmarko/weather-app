@@ -1,14 +1,28 @@
+.loadspinner {
+  height: 200px;
+  background-image: url("../../assets/weather.png");
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .spinner {
-  margin: 100px auto 0;
+  margin-top: 100px;
   width: 100%;
   text-align: center;
 }
 
 .spinner > div {
-  width: 35px;
-  height: 35px;
-  background-color: var(--rusty-red);
+  width: 18px;
+  height: 18px;
+  margin: 0 2%;
+  background-color: #D3DEDC;
 
+  border: 2px solid black;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;

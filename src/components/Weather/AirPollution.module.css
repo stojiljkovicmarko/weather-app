@@ -27,3 +27,98 @@
     rgba(125, 125, 125, 0.1)
   );
 }
+
+.aqi-info {
+    margin-bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.aqi-number {
+  width: 30%;
+  padding: 0.6rem 0;
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.aqi-desc p:first-of-type {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+
+.aqi-desc {
+  width: 70%;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+
+.more-data-expand {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.4rem 0.2rem;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.more-data-expand p {
+  padding: 0.2rem 0.4rem;
+}
+
+.more-data-expand button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  margin-right: 3%;
+}
+
+.more-data {
+  padding: 0.3rem 0.7rem;
+}
+
+.more-data p {
+  color: orange;
+  margin: 2%;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.good {
+  background-color: #95CD41;
+}
+
+.moderate {
+  background-color: #FFCA03;
+}
+
+.unhealthy1 {
+  background-color: #FF5403;
+}
+
+.unhealthy2 {
+  background-color: #F90716;
+}
+
+.unhealthy3 {
+  background-color: #781D42;
+}
+
+.hazardous {
+  background-color: #51050F;
+}
