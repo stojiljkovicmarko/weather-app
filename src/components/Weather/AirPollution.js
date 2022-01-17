@@ -62,7 +62,6 @@ const AirPollution = () => {
   return (
     <section>
       <div className={`${classes.aqi} ${classes.cb2}`}>
-        {/* WHEN CLICKED TO REDIRECT https://waqi.info/ */}
         <div className={classes["aqi-info"]}>
           <div className={`${classes["aqi-number"]} ${classes[aqiInfo.class]}`}>
             <p>{airPollutionData.data.aqi}</p>
@@ -83,11 +82,30 @@ const AirPollution = () => {
             classes[isVisible ? "visible" : "hidden"]
           }`}
         >
-          <p>PM2.5 &#9660; {airPollutionData.data.iaqi.pm25.v}</p>
-          <p>NO2 (Nitrogen Dioxide) {airPollutionData.data.iaqi.no2.v}</p>
-          <p>O3 (Ozone) {airPollutionData.data.iaqi.o3.v}</p>
-          <p>SO2 (Sulfur Oxide) {airPollutionData.data.iaqi.so2.v}</p>
-          <p>PM10 {airPollutionData.data.iaqi.pm10.v}</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>PM 2.5</td>
+                <td>{airPollutionData.data.iaqi.pm25.v} &#181;g/kg</td>
+              </tr>
+              <tr>
+                <td>NO2 <br/> <span>(Nitrogen Dioxide)</span></td>
+                <td>{airPollutionData.data.iaqi.no2.v} &#181;g/kg</td>
+              </tr>
+              <tr>
+                <td>O3 (Ozone)</td>
+                <td>{airPollutionData.data.iaqi.o3.v} &#181;g/kg</td>
+              </tr>
+              <tr>
+                <td>SO2 <br /> <span>(Sulfur Oxide)</span></td>
+                <td>{airPollutionData.data.iaqi.so2.v} &#181;g/kg</td>
+              </tr>
+              <tr>
+                <td>PM 10</td>
+                <td>{airPollutionData.data.iaqi.pm10.v} &#181;g/kg</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

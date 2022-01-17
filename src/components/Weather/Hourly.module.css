@@ -1,10 +1,14 @@
 .hourly-card {
   width: 100%;
   max-width: 500px;
-  padding: 0.6rem 0.6rem;
+  height: 170px;
+  padding: 0.6rem 0.6rem 0;
 
   border: 1px solid transparent;
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 
   backdrop-filter: blur(0.5rem);
   box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.5);
@@ -20,6 +24,20 @@
   overflow: auto;
   justify-content: left;
   align-items: center;
+}
+
+.hourly-card::-webkit-scrollbar {
+  height: 10px;
+}
+
+.hourly-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hourly-card::-webkit-scrollbar-thumb {
+  background-color: var(--cloud-blue);
+  border-radius: 25px;
+  border: 3px solid black;
 }
 
 .cb2 {

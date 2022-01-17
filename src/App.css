@@ -12,6 +12,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
 
-  --rusty-red: #9ec5be;
-  --rusty-red-shadow: rgba(225, 225, 225, 0.1);
+  --cloud-blue: #9ec5be;
+  --cloud-blue-shadow: rgba(225, 225, 225, 0.);
 }

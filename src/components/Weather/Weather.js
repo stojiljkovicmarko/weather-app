@@ -53,11 +53,10 @@ const getForecastDays = () => {
 const getNextHours = () => {
   let currentHour = date.getHours();
   const hoursArray = [];
-  for(let i = 0; i < 25; i++) {
-    
-    if(currentHour < 24) {
+  for (let i = 0; i < 25; i++) {
+    if (currentHour < 24) {
       currentHour++;
-      if(currentHour < 10) {
+      if (currentHour < 10) {
         hoursArray.push("0" + currentHour);
       } else {
         hoursArray.push("" + currentHour);

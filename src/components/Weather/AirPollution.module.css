@@ -82,13 +82,34 @@
   margin-right: 3%;
 }
 
-.more-data {
-  padding: 0.3rem 0.7rem;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.more-data p {
-  color: orange;
-  margin: 2%;
+tr {
+    border-bottom: 1px solid rgb(141, 141, 141);
+}
+
+tr td:first-child {
+    font-weight: bold;
+}
+
+tr td:nth-child(2) {
+    color: rgb(255, 174, 0);
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+table td {
+    padding: 1rem 1.2rem;
+}
+
+table span {
+    color: gray;
+    font-size: 0.8rem;
 }
 
 .hidden {
