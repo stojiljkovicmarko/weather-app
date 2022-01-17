@@ -3,7 +3,6 @@
 
 # Simple weather application!
 
-## Technologies used:
 - React.js
 - Redux
 - React routing
