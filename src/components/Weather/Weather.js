@@ -8,6 +8,7 @@ import NotFound from "../Error/NotFound";
 import classes from "./Weather.module.css";
 import Hourly from "./Hourly";
 import AirPollution from "./AirPollution";
+import Sun from "./Sun";
 
 const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.substring(1);
@@ -90,6 +91,7 @@ const Weather = (props) => {
           />
           <Hourly getNextHours={getNextHours} />
           <Forecast forecastDays={getForecastDays} />
+          <Sun />
           <AirPollution />
         </>
       )}

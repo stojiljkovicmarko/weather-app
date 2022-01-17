@@ -10,7 +10,7 @@ const CurrentWeather = (props) => {
 
   return (
     <section>
-      <div className={`${classes["current-day"]} ${classes.cb2}` }>
+      <div className={`${classes["current-day"]} ${classes.cb2}`}>
         <div className={classes.location}>
           <p className={classes.city}>
             {location.city}, {location.country}

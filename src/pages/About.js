@@ -14,6 +14,10 @@ const About = (props) => {
         <a href="https://opencagedata.com" target="_blank" rel="noreferrer">
           OpenCage Geocoding API
         </a>{" "}
+        <br /> 3.{"  "}
+        <a href="https://aqicn.org/api" target="_blank" rel="noreferrer">
+          Air Quality Programmatic API
+        </a>{" "}
       </p>
       <p>
         We implemented Redux for state management, even though it's fairly
