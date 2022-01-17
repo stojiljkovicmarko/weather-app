@@ -54,7 +54,7 @@
   box-shadow: none;
 }
 
-.active a {
+.nav .active {
   border-color: transparent;
   background-color: #568179;
   border-radius: 15px;
