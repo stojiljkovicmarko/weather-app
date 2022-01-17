@@ -1,5 +1,4 @@
 import classes from "./LoadSpinner.module.css";
-import cloud from "../../assets/cloud.png";
 
 const LoadingSpinner = () => {
   return (
