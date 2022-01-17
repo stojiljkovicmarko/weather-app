@@ -6,7 +6,7 @@
 - React.js
 - Redux
 - React routing
-- 2 APIs: Weather API and Geolocation API
+- 3 APIs: Weather API, Geolocation API, Air pollution API
 - CSS3 for styling
 - Responsive design
 
