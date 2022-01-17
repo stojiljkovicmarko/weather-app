@@ -13,7 +13,8 @@
   font-size: 2.6rem;
   font-weight: 900;
   color: var(--rusty-red);
-  text-shadow: 2px 2px rgba(116, 59, 53, 0.5);
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black,
+    1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
 
 .nav ul {
@@ -32,12 +33,13 @@
   text-decoration: none;
   display: block;
   padding: 0.5rem;
-  background-color: var(--rusty-red);
+  background-color: #9ec5be;
   font-weight: bold;
+  color: black;
 
-  border: 1px solid var(--rusty-red);
+  border: 2px solid black;
   border-radius: 15px;
-  box-shadow: 2px 2px var(--rusty-red-shadow);
+  box-shadow: 2px 2px rgba(26, 22, 21, 0.5);
 }
 
 .nav ul li {
