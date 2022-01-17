@@ -16,5 +16,7 @@ Otherwise you can search for a city of your choice.
 Landing page will show: 
 - Current weather (temp, humidity, wind, weather description);
 - Dailty forecast - for the next 5 days; 
-- Hourly forecast - for the next 24h.
+- Hourly forecast - for the next 24h;
+- Sunrise and sunset time - for that day;
+- Air quality - for that day.
 
