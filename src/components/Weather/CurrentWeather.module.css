@@ -1,6 +1,7 @@
 .current-day {
   width: 100%;
   max-width: 500px;
+  min-height: 160px;
   padding: 1rem 1.1rem;
 
   display: flex;

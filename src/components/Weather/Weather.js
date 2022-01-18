@@ -77,7 +77,7 @@ const Weather = (props) => {
   return (
     <main className={classes.main}>
       {loading && <LoadSpinner />}
-      {!loading && error && <NotFound />}
+      {!loading && error && <NotFound error={{ message: "Could not find the city you are searching for. Try again..." }} />}
       {!loading && !error && !weatherData && (
         <NotFound error={{ message: "Start by typing a city..." }} />
       )}

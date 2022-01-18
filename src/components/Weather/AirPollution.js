@@ -53,7 +53,6 @@ const AirPollution = () => {
   const [isVisible, setIsVisible] = useState(false);
   const airPollutionData = useSelector((state) => state.airPollutionData);
   const aqiInfo = aqiScale(airPollutionData.data.aqi);
-  console.log(airPollutionData);
 
   const expandMoreData = () => {
     setIsVisible(!isVisible);
@@ -86,23 +85,23 @@ const AirPollution = () => {
             <tbody>
               <tr>
                 <td>PM 2.5</td>
-                <td>{airPollutionData.data.iaqi.pm25.v} &#181;g/kg</td>
+                <td>{airPollutionData.data.iaqi.pm25?.v ?? "N/A"} &#181;g/kg</td>
               </tr>
               <tr>
                 <td>NO2 <br/> <span>(Nitrogen Dioxide)</span></td>
-                <td>{airPollutionData.data.iaqi.no2.v} &#181;g/kg</td>
+                <td>{airPollutionData.data.iaqi.no2?.v ?? "N/A"} &#181;g/kg</td>
               </tr>
               <tr>
                 <td>O3 (Ozone)</td>
-                <td>{airPollutionData.data.iaqi.o3.v} &#181;g/kg</td>
+                <td>{airPollutionData.data.iaqi.o3?.v ?? "N/A"} &#181;g/kg</td>
               </tr>
               <tr>
                 <td>SO2 <br /> <span>(Sulfur Oxide)</span></td>
-                <td>{airPollutionData.data.iaqi.so2.v} &#181;g/kg</td>
+                <td>{airPollutionData.data.iaqi.so2?.v ?? "N/A"} &#181;g/kg</td>
               </tr>
               <tr>
                 <td>PM 10</td>
-                <td>{airPollutionData.data.iaqi.pm10.v} &#181;g/kg</td>
+                <td>{airPollutionData.data.iaqi.pm10?.v ?? "N/A"} &#181;g/kg</td>
               </tr>
             </tbody>
           </table>
